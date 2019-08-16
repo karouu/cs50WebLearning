@@ -8,4 +8,4 @@ def index():
 
 @app.route("/<string:name>")
 def hello(name):
-    return "Hello, {}!".format(name)
+    return "Hello, {}!\n".format(name)
