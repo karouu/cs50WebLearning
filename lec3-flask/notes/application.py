@@ -16,3 +16,7 @@ def index():
         notes.append(note)
 
     return render_template("index.html", notes=notes)
+
+@app.route("/more")
+def more():
+    return render_template("more.html")
