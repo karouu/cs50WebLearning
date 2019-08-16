@@ -33,7 +33,6 @@ class Flight:
         self.passengers.append(p)
         p.flight_id = self.id
 
-
 class Passenger:
 
     def __init__(self, name):
@@ -41,7 +40,6 @@ class Passenger:
 
     def __repr__(self):
         return self.name
-
 
 def main():
 
