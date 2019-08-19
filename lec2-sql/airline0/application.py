@@ -32,4 +32,3 @@ def book():
             {"name": name, "flight_id": flight_id})
     db.commit()
     return render_template("success.html")
-
