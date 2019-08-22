@@ -54,7 +54,7 @@ def flight(flight_id):
     passengers = flight.passengers
     return render_template("flight.html", flight=flight, passengers=passengers)
 
-
+#API fpr Machine readable instead of HTML format
 @app.route("/api/flights/<int:flight_id>")
 def flight_api(flight_id):
     """Return details about a single flight."""
@@ -63,6 +63,7 @@ def flight_api(flight_id):
     flight = Flight.query.get(flight_id)
     if flight is None:
         return jsonify({"error": "Invalid flight_id"}), 422
+        #HTTP Response status_code:422, inprocessble entity
 
     # Get all passengers.
     passengers = flight.passengers

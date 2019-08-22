@@ -13,6 +13,10 @@ class Flight(db.Model):
     destination = db.Column(db.String, nullable=False)
     duration = db.Column(db.Integer, nullable=False)
     passengers = db.relationship("Passenger", backref="flight", lazy=True)
+#backref="flight" example
+#Passenger.query.filter_by(name="Alice").first().flight
+# SELECT * FROM flights JOIN passengers ON flights.id = passengers.flight_id WHERE
+# passengers.name = 'Alice'
 
     def add_passenger(self, name):
         p = Passenger(name=name, flight_id=self.id)
