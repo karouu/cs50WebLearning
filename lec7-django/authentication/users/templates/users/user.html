@@ -1,7 +1,12 @@
 {% extends "users/base.html" %}
 
 {% block body %}
+<<<<<<< HEAD
 <h1>Hello, Happy Auguest {{ user.first_name }}</h1>
+=======
+<h1>Hello, {{ user.first_name }}</h1>
+<p>feature branch</p>
+>>>>>>> a4de9719af1a21f7be32dc840f3962cd6115e038
 <ul>
     <li>Currently logged in as: {{ user.username }}</li>
     <li><a href="{% url 'logout' %}">Logout</a></li>
