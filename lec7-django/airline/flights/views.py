@@ -1,6 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect, Http404
-from django.shortcuts import render
 from django.urls import reverse
+from django.shortcuts import render
 
 from .models import Flight, Passenger
 
@@ -36,4 +36,3 @@ def book(request, flight_id):
         return render(request, "flights/error.html", {"message": "No passenger."})
     passenger.flights.add(flight)
     return HttpResponseRedirect(reverse("flight", args=(flight_id,)))
-
